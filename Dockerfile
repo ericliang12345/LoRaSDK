@@ -5,7 +5,7 @@ FROM ubuntu:16.04
 # update and install dev-tools 
 RUN apt-get update
 RUN apt-get install -y gawk git-core diffstat gcc-multilib build-essential sed coreutils autoconf automake libtool libssl-dev
-RUN apt-get install -y vim net-tools iputils-ping subversion sudo
+RUN apt-get install -y vim net-tools iputils-ping subversion sudo cmake
 
 # For LoRa
 RUN apt-get install -y gcc g++ binutils patch bzip2 flex make gettext pkg-config unzip zlib1g-dev libc6-dev subversion libncurses5-dev
@@ -20,4 +20,4 @@ RUN useradd -m -k /home/adv adv -p adv -s /bin/bash -G sudo
 # set up adv as sudo
 RUN echo "adv ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 WORKDIR /home/adv
-USER adv
+
